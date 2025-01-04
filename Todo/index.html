@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="write">
+        <ul id="tdl" style="list-style-type: none;">
+
+        </ul>
+
+        <script>
+            let write = document.getElementById("write");
+            let tdl = document.getElementById("tdl");
+
+            write.addEventListener("keydown",function(e){
+                if(e.key == "Enter"){
+                    addtdl(this.value);
+                    this.value="";
+                }
+                function addtdl(val){
+                    let list = document.createElement("li");
+                    list.innerHTML = `${val}`;
+                    console.log(val);
+                    tdl.appendChild(list);
+
+                    
+                }
+            })
+        </script>
+    </div>
+</body>
+</html>
